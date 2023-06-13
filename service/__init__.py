@@ -17,6 +17,10 @@ app.config.from_object(config)
 from flask_talisman import Talisman
 talisman = Talisman(app)
 
+# Add CORS Policies
+from flask_cors import CORS
+CORS(app)
+
 # Import the routes After the Flask app is created
 # pylint: disable=wrong-import-position, cyclic-import, wrong-import-order
 from service import routes, models  # noqa: F401 E402
